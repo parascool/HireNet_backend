@@ -7,6 +7,7 @@ export const sendToken = (user, statusCode, res, message) => {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production", // Ensure the cookie is only sent over HTTPS in production
     sameSite: "strict"
+   
   };
 
   res.status(statusCode).cookie("token", token, options).json({
